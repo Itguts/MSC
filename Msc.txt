@@ -1,0 +1,2 @@
+CosmosDB Azure connection
+mongodb://cosmosdbmongo:Xa1h3qdzsneO2TuJpfDj1jo40ZqXOhD8DBPKhqYmeUlaVFjlOUDceSX4TVMDMUqoCg1ItU1B3mLzkn70MhWncg==@cosmosdbmongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@cosmosdbmongo@
