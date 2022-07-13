@@ -6,7 +6,7 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["CosmosMongoUI/CosmosMongoUI.csproj", "."]
+COPY ["CosmosMongoUI/CosmosMongoUI.csproj", "CosmosMongoUI/"]
 RUN dotnet restore "CosmosMongoUI/CosmosMongoUI.csproj"
 COPY . .
 WORKDIR "/src/CosmosMongoUI"

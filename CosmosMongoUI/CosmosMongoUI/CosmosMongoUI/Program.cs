@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddHttpClient("restapiclient", c => c.BaseAddress = new System.Uri("http://localhost:54548//api"));
+builder.Services.AddHttpClient("restapiclient", c => c.BaseAddress = new System.Uri(builder.Configuration["WebAPIBaseUrl"]));
 //Uri endPointA = new Uri("http://localhost:44318/api/"); // this is the endpoint HttpClient will hit
 //HttpClient httpClient = new HttpClient()
 //{

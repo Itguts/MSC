@@ -1,2 +1,8 @@
 CosmosDB Azure connection
 mongodb://cosmosdbmongo:Xa1h3qdzsneO2TuJpfDj1jo40ZqXOhD8DBPKhqYmeUlaVFjlOUDceSX4TVMDMUqoCg1ItU1B3mLzkn70MhWncg==@cosmosdbmongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@cosmosdbmongo@
+
+docker build -t itgutscontainer/cosmosdbapi:0.0.1-RELEASE .
+docker build -t itgutscontainer/cosmosdbui:0.0.1-RELEASE .
+
+docker run -d -p 8080:80 --name=cosmosapi --network=cosmosapp-network itgutscontainer/cosmosdbapi:0.0.1-RELEASE
+docker run -d -p 8090:80 --name=cosmosui --env WebAPIBaseUrl=http://cosmosapi/api --env ASPNETCORE_ENVIRONMENT=Development --network=cosmosapp-network itgutscontainer/cosmosdbui:0.0.1-RELEASE
