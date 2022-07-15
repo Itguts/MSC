@@ -6,3 +6,31 @@ docker build -t itgutscontainer/cosmosdbui:0.0.1-RELEASE .
 
 docker run -d -p 8080:80 --name=cosmosapi --network=cosmosapp-network itgutscontainer/cosmosdbapi:0.0.1-RELEASE
 docker run -d -p 8090:80 --name=cosmosui --env WebAPIBaseUrl=http://cosmosapi/api --env ASPNETCORE_ENVIRONMENT=Development --network=cosmosapp-network itgutscontainer/cosmosdbui:0.0.1-RELEASE
+
+--ACR---
+az login
+az acr login --name itgutsacr
+docker build -t itgutsacr.azurecr.io/cosmosdbapi:0.0.1-RELEASE .
+docker build -t itgutsacr.azurecr.io/cosmosdbui:0.0.1-RELEASE .
+docker push itgutsacr.azurecr.io/cosmosdbapi:0.0.1-RELEASE
+docker push itgutsacr.azurecr.io/cosmosdbui:0.0.1-RELEASE
+
+
+WebAPIBaseUrl - https://cosmosdbapi.azurewebsites.net/api
+ASPNETCORE_ENVIRONMENT - Development
+
+----Mongo---------
+mongodump --host localhost --port 27017 -d MymongoDb -o D:\vikash\Study\Backup ****
+https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/cosmos-db/mongodb/tutorial-mongotools-cosmos-db.md
+mongodump --out "C:\Backup" 
+mongorestore --host cosmosdbmongo.mongo.cosmos.azure.com --port 10255 -u cosmosdbmongo -p mXqljdISNTSXqSGCjb5WMw9Iz89GrqhvtTt6O9zIziR4ACEu5pIQf4Asx9H0hJFL06crhRJRQXvDEX9luklnmA== --db BookStore --collection products --writeConcern="{w:0}" --ssl C:\Backup\MyMongoDb\products.bson
+
+---Migration tool--
+AccountEndpoint=https://cosmosdbmongo.mongo.cosmos.azure.com:10255;AccountKey=mXqljdISNTSXqSGCjb5WMw9Iz89GrqhvtTt6O9zIziR4ACEu5pIQf4Asx9H0hJFL06crhRJRQXvDEX9luklnmA==;Database=BookStore;
+
+------terraacr100.azurecr.io---------------terraacr100
+docker build -t terraacr100.azurecr.io/cosmosdbapi:0.0.1-RELEASE .
+docker build -t terraacr100.azurecr.io/cosmosdbui:0.0.1-RELEASE .
+
+docker push terraacr100.azurecr.io/cosmosdbapi:0.0.1-RELEASE
+docker push terraacr100.azurecr.io/cosmosdbui:0.0.1-RELEASE
