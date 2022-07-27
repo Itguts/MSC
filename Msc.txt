@@ -1,6 +1,8 @@
 CosmosDB Azure connection
 mongodb://cosmosdbmongo:Xa1h3qdzsneO2TuJpfDj1jo40ZqXOhD8DBPKhqYmeUlaVFjlOUDceSX4TVMDMUqoCg1ItU1B3mLzkn70MhWncg==@cosmosdbmongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@cosmosdbmongo@
 
+db.Books.insert({"Id":1,"Name":"Physics","Author":"HC Verma","Price":12345,"Category":"Science"})
+
 docker build -t itgutscontainer/cosmosdbapi:0.0.1-RELEASE .
 docker build -t itgutscontainer/cosmosdbui:0.0.1-RELEASE .
 
