@@ -1,5 +1,5 @@
 CosmosDB Azure connection
-mongodb://cosmosdbmongo:Xa1h3qdzsneO2TuJpfDj1jo40ZqXOhD8DBPKhqYmeUlaVFjlOUDceSX4TVMDMUqoCg1ItU1B3mLzkn70MhWncg==@cosmosdbmongo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@cosmosdbmongo@
+mongodb://itgutscosmosdb:sP1Xxcotr3vjqDUcUdSnFzkGpBNZgItqaoU3GpZ0n6GzaB7q8drfB4IUj539r7T7KmHeFo6XBttq28yDXUGCcw==@itgutscosmosdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@itgutscosmosdb@
 
 db.Books.insert({"Id":1,"Name":"Physics","Author":"HC Verma","Price":12345,"Category":"Science"})
 
